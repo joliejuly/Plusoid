@@ -20,6 +20,19 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gml-ZU-Ubs">
                                 <rect key="frame" x="0.0" y="0.0" width="180" height="568"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VkE-mM-dlt">
+                                        <rect key="frame" x="25" y="69" width="123" height="56"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="15"/>
+                                        <state key="normal" title="Новый список">
+                                            <color key="titleColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clearListTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3lY-1g-MWy"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -129,9 +142,15 @@
                             <constraint firstAttribute="trailing" secondItem="SsD-zS-VIk" secondAttribute="trailing" id="wmd-nV-Kna"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="SsD-zS-VIk"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="SxJ-OK-l8s"/>
                     <connections>
+                        <outlet property="clearListButton" destination="VkE-mM-dlt" id="4rO-eE-HEz"/>
                         <outlet property="leadingContainerViewConstraint" destination="rmA-fx-nGD" id="R7m-0d-Vjj"/>
                         <outlet property="priceTextField" destination="DWT-dW-hOV" id="9bz-lJ-r4Y"/>
                         <outlet property="sumLabel" destination="Whb-kd-Kwv" id="mqd-Xl-z98"/>

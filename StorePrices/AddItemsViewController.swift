@@ -29,7 +29,7 @@ final class AddItemsViewController: UIViewController {
     //MARK: - Side menu
     @IBOutlet weak var leadingContainerViewConstraint: NSLayoutConstraint!
     @IBOutlet weak var trailingContainerViewConstraint: NSLayoutConstraint!
-    
+    @IBOutlet weak var clearListButton: UIButton!
     
     @IBAction func swipeOccured(_ sender: UISwipeGestureRecognizer) {
         
@@ -61,6 +61,10 @@ final class AddItemsViewController: UIViewController {
         viewModel.fetchPrices()
         
         setUpBindings()
+        
+        clearListButton.layer.cornerRadius = clearListButton.frame.height / 2
+        clearListButton.layer.borderWidth = 1
+        clearListButton.layer.borderColor = UIColor.white.cgColor
     }
 
     //MARK: - Actions
@@ -70,9 +74,18 @@ final class AddItemsViewController: UIViewController {
         priceTextField.text = ""
     }
     
+    
+    @IBAction func clearListTapped(_ sender: UIButton) {
+        
+        viewModel.clearPrices()
+        
+    }
+    
+    
     //MARK: - Helpers
     private func setUpBindings() {
         viewModel.didFetchPrices = { [weak self] array in
+            self?.prices = []
             self?.prices += array
             
             DispatchQueue.main.async {
@@ -133,6 +146,7 @@ extension AddItemsViewController: UITableViewDelegate {
             prices.remove(at: indexPath.row)
             updateSum()
             tableView.deleteRows(at: [indexPath], with: .automatic)
+            viewModel.sendPrices(with: prices)
         }
     }
     

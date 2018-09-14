@@ -13,6 +13,29 @@ final class AddItemsViewModel {
     var didFetchPrices: ( ([Int]) -> Void)?
     
     func fetchPrices() {
+        
+        FirebaseHelper.shared.db.collection("prices").document("yqLiqtqDz5ZTJ9qtQyfX")
+            .addSnapshotListener { [weak self] documentSnapshot, error in
+                guard let document = documentSnapshot else {
+                    print("Error fetching document: \(error!)")
+                    return
+                }
+                guard let data = document.data() else {
+                    print("Document data was empty.")
+                    return
+                }
+                print("Current data: \(data)")
+                
+                if let dic = data as? NSDictionary,
+                    let arr = dic["prices"] as? Array<Int> {
+                    self?.didFetchPrices?(arr)
+                    print(arr)
+                }
+        }
+
+        
+        
+        
         FirebaseHelper.shared.db.collection("prices").getDocuments() { [weak self] querySnapshot, error in
             if let err = error {
                 print("Error getting documents: \(err)")
