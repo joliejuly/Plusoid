@@ -33,23 +33,28 @@ final class AddItemsViewController: UIViewController {
     
     @IBAction func swipeOccured(_ sender: UISwipeGestureRecognizer) {
         
-        UIView.animate(withDuration: 0.4) { [weak self] in
-            self?.leadingContainerViewConstraint.constant = 150
-            self?.trailingContainerViewConstraint.constant = -150
-            self?.view.layoutIfNeeded()
+        switch sender.direction {
+        case .right:
+            UIView.animate(withDuration: 0.4) { [weak self] in
+                self?.leadingContainerViewConstraint.constant = 150
+                self?.trailingContainerViewConstraint.constant = -150
+                self?.view.layoutIfNeeded()
+            }
+            
+            view.endEditing(true)
+            
+        case .left:
+            UIView.animate(withDuration: 0.4) { [weak self] in
+                self?.leadingContainerViewConstraint.constant = 0
+                self?.trailingContainerViewConstraint.constant = 0
+                self?.view.layoutIfNeeded()
+            }
+            
+        default: break
         }
         
-        view.endEditing(true)
     }
     
-    @IBAction func doubleTapOccured(_ sender: UITapGestureRecognizer) {
-        
-        UIView.animate(withDuration: 0.4) { [weak self] in
-            self?.leadingContainerViewConstraint.constant = 0
-            self?.trailingContainerViewConstraint.constant = 0
-            self?.view.layoutIfNeeded()
-        }
-    }
     
     //MARK: - Life cycle
     override func viewDidLoad() {
@@ -60,11 +65,8 @@ final class AddItemsViewController: UIViewController {
        
         viewModel.fetchPrices()
         
+        setUpViews()
         setUpBindings()
-        
-        clearListButton.layer.cornerRadius = clearListButton.frame.height / 2
-        clearListButton.layer.borderWidth = 1
-        clearListButton.layer.borderColor = UIColor.white.cgColor
     }
 
     //MARK: - Actions
@@ -77,12 +79,19 @@ final class AddItemsViewController: UIViewController {
     
     @IBAction func clearListTapped(_ sender: UIButton) {
         
-        viewModel.clearPrices()
+        viewModel.sendPrices(with: [])
         
     }
     
     
     //MARK: - Helpers
+    private func setUpViews() {
+        clearListButton.layer.cornerRadius = clearListButton.frame.height / 2
+        clearListButton.layer.borderWidth = 1
+        clearListButton.layer.borderColor = UIColor.white.cgColor
+    }
+    
+    
     private func setUpBindings() {
         viewModel.didFetchPrices = { [weak self] array in
             self?.prices = []
