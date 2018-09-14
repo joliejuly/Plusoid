@@ -18,6 +18,10 @@ final class AddItemsViewController: UIViewController {
         }
     }
     
+    lazy var viewModel: AddItemsViewModel = {
+        return AddItemsViewModel()
+    }()
+    
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sumLabel: UILabel!
@@ -54,6 +58,7 @@ final class AddItemsViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
        
+        viewModel.fetchPrices()
     }
 
     //MARK: - Actions

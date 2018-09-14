@@ -13,6 +13,8 @@
 		0F60BC3C214C306000F4364F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F60BC3B214C306000F4364F /* Assets.xcassets */; };
 		0F60BC3F214C306000F4364F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F60BC3D214C306000F4364F /* LaunchScreen.storyboard */; };
 		0FD6857F214C605000A9043B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0FD6857E214C605000A9043B /* GoogleService-Info.plist */; };
+		0FD68581214C644E00A9043B /* AddItemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD68580214C644E00A9043B /* AddItemsViewModel.swift */; };
+		0FD68583214C64E000A9043B /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD68582214C64E000A9043B /* FirebaseHelper.swift */; };
 		EAE7A28E938A610837FC065F /* Pods_StorePrices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC73EC79105203A864638DC7 /* Pods_StorePrices.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +27,8 @@
 		0F60BC3E214C306000F4364F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0F60BC40214C306000F4364F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FD6857E214C605000A9043B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0FD68580214C644E00A9043B /* AddItemsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemsViewModel.swift; sourceTree = "<group>"; };
+		0FD68582214C64E000A9043B /* FirebaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
 		8A3CF2ED9262E6D601B73F31 /* Pods-StorePrices.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StorePrices.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StorePrices/Pods-StorePrices.debug.xcconfig"; sourceTree = "<group>"; };
 		F15095FB792196EBE431771C /* Pods-StorePrices.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StorePrices.release.xcconfig"; path = "Pods/Target Support Files/Pods-StorePrices/Pods-StorePrices.release.xcconfig"; sourceTree = "<group>"; };
 		FC73EC79105203A864638DC7 /* Pods_StorePrices.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StorePrices.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,11 +69,13 @@
 			children = (
 				0F60BC34214C305F00F4364F /* AppDelegate.swift */,
 				0F60BC36214C305F00F4364F /* AddItemsViewController.swift */,
+				0FD68580214C644E00A9043B /* AddItemsViewModel.swift */,
 				0F60BC38214C305F00F4364F /* Main.storyboard */,
 				0F60BC3B214C306000F4364F /* Assets.xcassets */,
 				0F60BC3D214C306000F4364F /* LaunchScreen.storyboard */,
 				0F60BC40214C306000F4364F /* Info.plist */,
 				0FD6857E214C605000A9043B /* GoogleService-Info.plist */,
+				0FD68582214C64E000A9043B /* FirebaseHelper.swift */,
 			);
 			path = StorePrices;
 			sourceTree = "<group>";
@@ -228,7 +234,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FD68583214C64E000A9043B /* FirebaseHelper.swift in Sources */,
 				0F60BC37214C305F00F4364F /* AddItemsViewController.swift in Sources */,
+				0FD68581214C644E00A9043B /* AddItemsViewModel.swift in Sources */,
 				0F60BC35214C305F00F4364F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
