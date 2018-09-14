@@ -7,17 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F144A86214C5C0D0048C751 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F144A85214C5C0D0048C751 /* GoogleService-Info.plist */; };
 		0F60BC35214C305F00F4364F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F60BC34214C305F00F4364F /* AppDelegate.swift */; };
 		0F60BC37214C305F00F4364F /* AddItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F60BC36214C305F00F4364F /* AddItemsViewController.swift */; };
 		0F60BC3A214C305F00F4364F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F60BC38214C305F00F4364F /* Main.storyboard */; };
 		0F60BC3C214C306000F4364F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F60BC3B214C306000F4364F /* Assets.xcassets */; };
 		0F60BC3F214C306000F4364F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F60BC3D214C306000F4364F /* LaunchScreen.storyboard */; };
+		0FD6857F214C605000A9043B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0FD6857E214C605000A9043B /* GoogleService-Info.plist */; };
 		EAE7A28E938A610837FC065F /* Pods_StorePrices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC73EC79105203A864638DC7 /* Pods_StorePrices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0F144A85214C5C0D0048C751 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0F60BC31214C305F00F4364F /* StorePrices.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StorePrices.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F60BC34214C305F00F4364F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F60BC36214C305F00F4364F /* AddItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemsViewController.swift; sourceTree = "<group>"; };
@@ -25,6 +24,7 @@
 		0F60BC3B214C306000F4364F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F60BC3E214C306000F4364F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0F60BC40214C306000F4364F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FD6857E214C605000A9043B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8A3CF2ED9262E6D601B73F31 /* Pods-StorePrices.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StorePrices.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StorePrices/Pods-StorePrices.debug.xcconfig"; sourceTree = "<group>"; };
 		F15095FB792196EBE431771C /* Pods-StorePrices.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StorePrices.release.xcconfig"; path = "Pods/Target Support Files/Pods-StorePrices/Pods-StorePrices.release.xcconfig"; sourceTree = "<group>"; };
 		FC73EC79105203A864638DC7 /* Pods_StorePrices.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StorePrices.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,7 +69,7 @@
 				0F60BC3B214C306000F4364F /* Assets.xcassets */,
 				0F60BC3D214C306000F4364F /* LaunchScreen.storyboard */,
 				0F60BC40214C306000F4364F /* Info.plist */,
-				0F144A85214C5C0D0048C751 /* GoogleService-Info.plist */,
+				0FD6857E214C605000A9043B /* GoogleService-Info.plist */,
 			);
 			path = StorePrices;
 			sourceTree = "<group>";
@@ -152,7 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F60BC3F214C306000F4364F /* LaunchScreen.storyboard in Resources */,
-				0F144A86214C5C0D0048C751 /* GoogleService-Info.plist in Resources */,
+				0FD6857F214C605000A9043B /* GoogleService-Info.plist in Resources */,
 				0F60BC3C214C306000F4364F /* Assets.xcassets in Resources */,
 				0F60BC3A214C305F00F4364F /* Main.storyboard in Resources */,
 			);
@@ -192,14 +192,28 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-StorePrices/Pods-StorePrices-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

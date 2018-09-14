@@ -7,6 +7,7 @@ target 'StorePrices' do
 
   # Pods for StorePrices
   pod 'Firebase/Core'
+  pod 'Firebase/Firestore'
 
 
 end
