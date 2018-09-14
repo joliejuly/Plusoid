@@ -11,6 +11,7 @@ import UIKit
 final class AddItemsViewController: UIViewController {
 
     var prices = [Int]()
+    
     var sum = 0 {
         didSet {
             sumLabel.text = "Итого: \(sum) ₽"
@@ -35,7 +36,6 @@ final class AddItemsViewController: UIViewController {
         }
         
         view.endEditing(true)
-        
     }
     
     @IBAction func doubleTapOccured(_ sender: UITapGestureRecognizer) {
@@ -45,7 +45,6 @@ final class AddItemsViewController: UIViewController {
             self?.trailingContainerViewConstraint.constant = 0
             self?.view.layoutIfNeeded()
         }
-        
     }
     
     //MARK: - Life cycle
