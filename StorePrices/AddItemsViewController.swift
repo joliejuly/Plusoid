@@ -21,6 +21,33 @@ final class AddItemsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sumLabel: UILabel!
     
+    //MARK: - Side menu
+    @IBOutlet weak var leadingContainerViewConstraint: NSLayoutConstraint!
+    @IBOutlet weak var trailingContainerViewConstraint: NSLayoutConstraint!
+    
+    
+    @IBAction func swipeOccured(_ sender: UISwipeGestureRecognizer) {
+        
+        UIView.animate(withDuration: 0.4) { [weak self] in
+            self?.leadingContainerViewConstraint.constant = 150
+            self?.trailingContainerViewConstraint.constant = -150
+            self?.view.layoutIfNeeded()
+        }
+        
+        view.endEditing(true)
+        
+    }
+    
+    @IBAction func doubleTapOccured(_ sender: UITapGestureRecognizer) {
+        
+        UIView.animate(withDuration: 0.4) { [weak self] in
+            self?.leadingContainerViewConstraint.constant = 0
+            self?.trailingContainerViewConstraint.constant = 0
+            self?.view.layoutIfNeeded()
+        }
+        
+    }
+    
     //MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,12 +74,12 @@ final class AddItemsViewController: UIViewController {
         else { return }
         
         prices.insert(number, at: 0)
+        tableView.reloadData()
         updateSum()
     }
     
     private func updateSum() {
         sum = prices.reduce(0, +)
-        tableView.reloadData()
     }
     
 }
@@ -79,5 +106,16 @@ extension AddItemsViewController: UITableViewDataSource {
 
 //MARK: - Table view delegate methods
 extension AddItemsViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            prices.remove(at: indexPath.row)
+            updateSum()
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
+    
+    
     
 }
