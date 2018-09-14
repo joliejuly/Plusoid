@@ -59,6 +59,8 @@ final class AddItemsViewController: UIViewController {
         tableView.dataSource = self
        
         viewModel.fetchPrices()
+        
+        setUpBindings()
     }
 
     //MARK: - Actions
@@ -69,6 +71,18 @@ final class AddItemsViewController: UIViewController {
     }
     
     //MARK: - Helpers
+    private func setUpBindings() {
+        viewModel.didFetchPrices = { [weak self] array in
+            self?.prices += array
+            
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+                self?.updateSum()
+            }
+            
+        }
+    }
+    
     
     private func proceed(textFieldInput: String?) {
         guard
@@ -80,6 +94,8 @@ final class AddItemsViewController: UIViewController {
         prices.insert(number, at: 0)
         tableView.reloadData()
         updateSum()
+        
+        viewModel.sendPrices(with: prices)
     }
     
     private func updateSum() {
