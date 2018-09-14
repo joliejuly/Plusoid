@@ -1,0 +1,6 @@
+framework module Pods_StorePrices {
+  umbrella header "Pods-StorePrices-umbrella.h"
+
+  export *
+  module * { export * }
+}
